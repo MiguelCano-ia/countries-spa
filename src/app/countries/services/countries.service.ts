@@ -10,6 +10,14 @@ export class CountriesService {
 
   constructor(private http: HttpClient) { }
 
+  serachCountryByAlphaCode( code: string): Observable<Country[]> {
+    const url = `${this.apiUrl}/alpha/${code}`;
+    return this.http.get<Country[]>( url )
+      .pipe(
+        catchError( () => of([]))
+      );
+  }
+
   searchCapital( term: string): Observable<Country[]> {
     const url = `${this.apiUrl}/capital/${term}`;
     // En el return debemos poner un generico con el tipo de dato que esperamos recibir.

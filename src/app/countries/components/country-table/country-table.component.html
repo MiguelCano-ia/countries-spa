@@ -34,7 +34,7 @@
           {{ country.population | number }} <!-- Pipe number: Da formato al numero. -->
         </td>
         <td>
-          <a href="#">See more</a>
+          <a [routerLink]="[ '/countries/by', country.cca3 ]">See more</a>
         </td>
       </tr>
     </tbody>

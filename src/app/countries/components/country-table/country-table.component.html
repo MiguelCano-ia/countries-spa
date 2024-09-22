@@ -12,6 +12,7 @@
         <th>Name</th>
         <th>Capital</th>
         <th>Population</th>
+        <th>Currency</th>
         <th></th>
       </tr>
     </thead>
@@ -32,6 +33,9 @@
         </td>
         <td>
           {{ country.population | number }} <!-- Pipe number: Da formato al numero. -->
+        </td>
+        <td>
+          {{ country.currencies }}
         </td>
         <td>
           <a [routerLink]="[ '/countries/by', country.cca3 ]">See more</a>

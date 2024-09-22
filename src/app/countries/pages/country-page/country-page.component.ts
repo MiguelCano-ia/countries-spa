@@ -22,7 +22,7 @@ export class CountryPageComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.params
       .pipe(
-        switchMap(({ id }) =>  this.countriesService.serachCountryByAlphaCode( id )),
+        switchMap(({ id }) =>  this.countriesService.searchCountryByAlphaCode( id )),
       )
       .subscribe( country => {
         if (!country) return this.router.navigateByUrl(''); // Redirect to home page if country is not found
